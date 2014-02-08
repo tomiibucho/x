@@ -36,7 +36,7 @@
     <p>
       <%= f.select :outfielder2,
                    Batter.all.map { |u| [u.name, u.id] },
-                   { include_blank:true,:disabled=> $(this).data('outfielder1_id')},
+                   { include_blank:true,:disabled=> 2},
                    { :class => "chosen-select" }
 
       %>
