@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  starter1: MyString
+  starter2: MyString
+  reliever1: MyString
+  reliever2: MyString
+  catcher: MyString
+  first: MyString
+  second: MyString
+  third: MyString
+  short: MyString
+  outfielder1: MyString
+  outfielder2: MyString
+  outfielder3: MyString
+
+two:
+  name: MyString
+  starter1: MyString
+  starter2: MyString
+  reliever1: MyString
+  reliever2: MyString
+  catcher: MyString
+  first: MyString
+  second: MyString
+  third: MyString
+  short: MyString
+  outfielder1: MyString
+  outfielder2: MyString
+  outfielder3: MyString

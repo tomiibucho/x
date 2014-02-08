@@ -1,0 +1,12 @@
+<h1>Welcome to Fantasy MLB</h1>
+
+
+<ul>
+<% @myteams.each do |myteam| %>
+    <li>
+      <%= link_to myteam.name, myteam_path(myteam.id) %>
+    </li>
+    <% end %>
+</ul>
+
+<p><%= link_to "Create your team", new_myteam_path %></p>

@@ -1,0 +1,67 @@
+
+<%= form_for @team do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <% if @team.errors.any? %>
+          <%= @team.errors.messages[:name][0] %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= f.label :starters %><br>
+      <%= f.collection_select :starter1,Pitcher.all, :name,:name,  :prompt =>"Please choose the pitchers" %>
+    </p>
+
+    <p>
+      <%= f.label :catcher %><br>
+      <%= f.collection_select :catcher,Batter.where(position: 'C').all, :id,:name,  :prompt =>"Please choose 1 catcher" %>
+    </p>
+
+    <p>
+      <%= f.label :shortstop %><br>
+      <%= f.collection_select :short,Batter.where(position: 'SS').all, :name,:name,  :prompt =>"Please choose 1 shortstop" %>
+    </p>
+<p>
+    <%= f.label :outfielders %><br>
+    <%= f.select :outfielder1,
+                 options_for_select(Batter.all.map { |u| [u.name, u.id] },params[:outfielder1]),
+                 { include_blank:true,},
+                 { :class => "chosen-select" }
+    %>
+</p>
+
+    <% %>
+
+    <p>
+      <%= f.select :outfielder2,
+                   Batter.all.map { |u| [u.name, u.id] },
+                   { include_blank:true,:disabled=> $(this).data('outfielder1_id')},
+                   { :class => "chosen-select" }
+
+      %>
+
+
+    </p>
+
+    <p>
+      <%= f.select :outfielder3,
+                   Batter.all.map { |u| [u.name, u.id] },
+                   { include_blank:true,:disabled=>2},
+                   { :class => "chosen-select" }
+      %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+    <script>
+
+        $(function() {})
+        $("input[type=checkbox]").click(function(){
+            $.post('/projects/'+$(this).data('project_id')+'/tasks/'+$(this).data('id')+'/toggle')
+        });
+    </script>
+
+
+<% end %>

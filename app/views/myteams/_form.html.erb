@@ -1,0 +1,24 @@
+
+<%= form_for @myteam do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <% if @myteam.errors.any? %>
+          <%= @myteam.errors.messages[:name][0] %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= f.label :formation %><br>
+      <%= f.collection_select :formation,Formation.all, :title,:title,  :prompt =>"Please choose the pitchers" %>
+    </p>
+
+    <p>
+      <%= f.label :myplayer %><br>
+      <%= f.collection_select :myplayer,Player.all, :name,:name, :prompt =>"Please pick the fielders" %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

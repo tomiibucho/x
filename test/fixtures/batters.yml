@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  team: MyString
+  position: MyString
+  avg: 1.5
+  hr: 1.5
+  total_point: 1.5
+
+two:
+  name: MyString
+  team: MyString
+  position: MyString
+  avg: 1.5
+  hr: 1.5
+  total_point: 1.5
